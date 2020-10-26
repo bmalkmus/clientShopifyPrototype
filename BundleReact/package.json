@@ -1,0 +1,28 @@
+{
+  "name": "bundlereact",
+  "version": "1.0.0",
+  "description": "React Client Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --config webpack/webpack.dev.js --progress --color",
+    "build": "webpack --config webpack/webpack.prod.js --progress --color"
+    
+  },
+  "author": "Ben M",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "babel-loader": "^8.1.0",
+    "core-js": "^3.6.5",
+    "webpack": "^5.2.0",
+    "webpack-cli": "^4.1.0",
+    "webpack-merge": "^5.2.0"
+  }
+}
