@@ -1,9 +1,10 @@
 import React from 'react';
+import Products from './components/products'
 
 function App () {
     return(
         <div>
-            Test Hello World
+            <Products/>
         </div>
     )
 }
