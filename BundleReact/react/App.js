@@ -10,6 +10,8 @@ function App () {
     const [products,setProducts] =useState([])
     const [loaded, setLoad] = useState(false)
     const [bundle, setBundle] = useState([])
+    const [total,setTotal] = useState(0)
+    const [bundled, getBundled] = useState(false)
 
     function getProducts(){
         axios.get("https://23-test-store.myshopify.com/admin/api/2020-10/products.json")
@@ -28,10 +30,25 @@ function App () {
             <Pagination/>
             <Switch>
                 <Route exact path={["/pages/test"]}>
-                    <Box products ={products} loaded={loaded} bundle = {bundle} setBundle = {setBundle}/>
+                    <Box products ={products} 
+                        loaded={loaded} 
+                        bundle = {bundle} 
+                        setBundle={setBundle} 
+                        total={total}
+                        setTotal={setTotal}
+                    />
                 </Route>
                 <Route exact path={["/pages/test/bundleproducts"]}>
-                    <Products products ={products} loaded={loaded} bundle = {bundle} setBundle = {setBundle}/>
+                    <Products 
+                        products ={products} 
+                        loaded={loaded} bundle = {bundle} 
+                        setBundle = {setBundle} 
+                        bundled={bundled} 
+                        getBundled={getBundled}
+                        total={total}
+                        setTotal={setTotal}
+                    
+                    />
                 </Route>
                 <Route exact path={["/pages/test/card"]}>
                     <GiftCardOptions/>

@@ -5,15 +5,12 @@ import Summary from '../summary'
 
 function Products(props){
 
-            const [bundled, getBundled] = useState(false)
-
-
             useEffect(()=>{
                 let selected = props.bundle
                 if(selected.length !=0){
-                    getBundled(true)
+                    props.getBundled(true)
                 }
-            },[bundled])
+            },[props.bundled])
             return (
                 <div className="productOptionsContainer">
                     <h4>Step 1 of 3</h4>
@@ -32,7 +29,7 @@ function Products(props){
                         <div className="seperator">
                             <div className ="left box">
                                 <button>Start Selecting Items to Fill your Box</button>
-                                {bundled ? [...props.bundle].map(item => (
+                                {props.bundled ? [...props.bundle].map(item => (
                                     <Thumbnail
                                         src={item.srcImage}
                                         title={item.title}
@@ -40,7 +37,8 @@ function Products(props){
                                 )) : <div>no products......</div>}
                             </div>
                             <div className ="right box">
-                                <Summary/>
+                                {props.bundled ? <Summary bundle={props.bundle} setBundle={props.setBundle} total={props.total} setTotal={props.setTotal}/> : <div> <ul><li>No items in your bundle.</li></ul></div>}
+                                
                             </div>
                         </div>
                     </div>
@@ -48,7 +46,7 @@ function Products(props){
                     {!props.loaded ? 
                     <div>Loading...</div> : 
                         props.products.products.filter(items => items.product_type !== "Card").map(product => (
-                            <GetCards product ={product} key ={product.id} setBundle={props.setBundle} bundle={props.bundle} getBundled= {getBundled}/>
+                            <GetCards product ={product} key ={product.id} setBundle={props.setBundle} total = {props.total} setTotal={props.setTotal} bundle={props.bundle} getBundled= {props.getBundled}/>
                         ))
                     }
                     </div>

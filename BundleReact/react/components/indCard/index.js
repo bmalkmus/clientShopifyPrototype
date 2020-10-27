@@ -3,6 +3,8 @@ import React from "react";
 function GetCards(props){
 
     function setBundle(event) {
+        console.log('click')
+        let currentTotal = props.total
         let bundle = props.bundle;
         let newItem = {
             title:event.target.dataset.title,
@@ -11,9 +13,12 @@ function GetCards(props){
             price:event.target.dataset.price,
             srcImage:event.target.dataset.sourceimage
         }
+        let price = parseInt(event.target.dataset.price)
+        let newPrice = currentTotal+price
         bundle.push(newItem);
         props.setBundle(bundle);
-        props.getBundled()
+        props.setTotal(newPrice)
+        props.getBundled(true)
     }
     
     return(
