@@ -1,0 +1,16 @@
+#itemized {
+    align-content: center;
+}
+.removeButton {
+    background-color: transparent;
+    border: none;
+    color: red;
+    font-weight: bolder;
+}
+
+.sumz{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:5px;
+}

@@ -1,0 +1,43 @@
+#productOptions {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content:space-evenly;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.productOptionsContainer{
+    text-align: center;
+    display: flex;
+    align-content: center;
+    justify-items: center;
+    flex-direction: column;
+    margin: 10px;
+
+}
+.StepDescription p{
+    text-align: center;
+}
+
+.seperator {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    min-height: 200px;
+    background-color: antiquewhite;
+
+}
+.left-box, .right-box {
+    min-height:100%;
+    width:100%;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.left-box{
+    display: flex;
+    flex-direction: row;;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

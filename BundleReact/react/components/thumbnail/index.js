@@ -1,9 +1,11 @@
 import React from 'react';
+import './style.css'
 
 function Thumbnail(props){
+    
     return (
         <div>
-            <img src={props.src} alt={props.title}/>
+            <img className='thumbnails' src={props.src} alt={props.title} />
         </div>
     )
 }

@@ -7,6 +7,7 @@ import Pagination from "./components/Pagination"
 import axios from 'axios'
 
 function App () {
+    const [id, setID] = useState(1)
     const [products,setProducts] =useState([])
     const [loaded, setLoad] = useState(false)
     const [bundle, setBundle] = useState([])
@@ -14,7 +15,7 @@ function App () {
     const [bundled, getBundled] = useState(false)
 
     function getProducts(){
-        axios.get("https://23-test-store.myshopify.com/admin/api/2020-10/products.json")
+        axios.get("/admin/api/2020-10/products.json")
         .then(response => {
             setProducts(response.data)
             setLoad(true)
@@ -27,7 +28,6 @@ function App () {
 
     return(
         <Router>
-            <Pagination/>
             <Switch>
                 <Route exact path={["/pages/test"]}>
                     <Box products ={products} 
@@ -51,7 +51,7 @@ function App () {
                     />
                 </Route>
                 <Route exact path={["/pages/test/card"]}>
-                    <GiftCardOptions/>
+                    <GiftCardOptions bundle = {bundle} id={id} setID={setID}/>
                 </Route>
             </Switch>
         </Router>

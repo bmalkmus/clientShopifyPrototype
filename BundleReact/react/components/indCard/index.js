@@ -1,9 +1,9 @@
 import React from "react";
+import './style.css';
 
 function GetCards(props){
 
     function setBundle(event) {
-        console.log('click')
         let currentTotal = props.total
         let bundle = props.bundle;
         let newItem = {
@@ -23,7 +23,7 @@ function GetCards(props){
     
     return(
     
-    <div className = "card">
+    <div className = "card" key ={props.product.variants[0].id}>
     <div className = "img-container">
            <img className = "card-img"
                     alt = {props.product.title} 
@@ -31,11 +31,11 @@ function GetCards(props){
                 />
             </div>
             <div className ="card-body">
-                <h4 className = "card-vendor">
-                     {props.product.vendor} 
-                </h4>
                 <p className = "card-text card-descrip">
                     {props.product.title}
+                </p>
+                <p className = "card-vendor">
+                     {props.product.vendor} 
                 </p>
                 <p className = "card-text card-price">
                     ${props.product.variants[0].price}
@@ -45,7 +45,7 @@ function GetCards(props){
                     data-sourceimage= {props.product.image.src}
                     data-price = {props.product.variants[0].price}
                     data-vendor = {props.product.vendor}
-                    data-id = {props.product.id}
+                    data-id = {props.product.variants[0].id}
                     onClick = {setBundle}
                 >
                     Add to Bundle
