@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Products from './components/products';
 import Box from './components/box';
 import GiftCardOptions from './components/messageCards'
-import Pagination from "./components/Pagination"
 import axios from 'axios'
 
 function App () {
@@ -13,6 +12,8 @@ function App () {
     const [bundle, setBundle] = useState([])
     const [total,setTotal] = useState(0)
     const [bundled, getBundled] = useState(false)
+
+   console.log(location.href)
 
     function getProducts(){
         axios.get("/admin/api/2020-10/products.json")
