@@ -23,7 +23,7 @@ function Summary (props){
 
     function completeBundle(){
         if(props.total >= 28.00){
-            history.push("/pages/test/card")
+            history.push(props.pageName+"/card")
         }
         else{
             alert("Sorry your total needs to be equal to $28.00 or more")

@@ -24,7 +24,7 @@ function Box (props) {
         let currentTotal = props.total
         props.setBundle(temp);
         props.setTotal(currentTotal+=price)
-        history.push("/pages/"+location.href.slice(location.href.indexOf("/pages")+7)+"/bundleproducts")
+        history.push(props.pageName + "/bundleproducts")
 
     }
 

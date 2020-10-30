@@ -41,7 +41,7 @@ function Products(props){
                                 )) : <a href="#productOptions">Start Selecting Items to Fill your Box</a>}
                             </div>
                             <div className ="right-box">
-                                {props.bundled ? <Summary bundle={props.bundle} setBundle={props.setBundle} total={props.total} setTotal={props.setTotal}/> : <div> <ul><li>No items in your bundle.</li></ul></div>}
+                                {props.bundled ? <Summary bundle={props.bundle} setBundle={props.setBundle} total={props.total} setTotal={props.setTotal} pageName={props.pageName}/> : <div> <ul><li>No items in your bundle.</li></ul></div>}
                                 
                             </div>
                         </div>

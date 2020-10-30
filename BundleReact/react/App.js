@@ -14,9 +14,14 @@ function App () {
     const [bundled, getBundled] = useState(false)
 
     
-    
+    const start = location.href.indexOf("/pages")
+    let end
+    if (location.href.indexOf("/", start+7) !== -1){
+        end = location.href.indexOf("/", start+7)
+    }
 
-    const pageName=location.href.slice(location.href.indexOf("/pages")+7)
+    const pageName=location.href.slice(start,end)
+    
 
     function getProducts(){
         axios.get("/admin/api/2020-10/products.json")
@@ -33,16 +38,17 @@ function App () {
     return(
         <Router>
             <Switch>
-                <Route exact path={["/pages/test"]}>
+                <Route exact path={[pageName]}>
                     <Box products ={products} 
                         loaded={loaded} 
                         bundle = {bundle} 
                         setBundle={setBundle} 
                         total={total}
                         setTotal={setTotal}
+                        pageName={pageName}
                     />
                 </Route>
-                <Route exact path={["/pages/test/bundleproducts"]}>
+                <Route exact path={[pageName+"/bundleproducts"]}>
                     <Products 
                         products ={products} 
                         loaded={loaded} bundle = {bundle} 
@@ -51,11 +57,12 @@ function App () {
                         getBundled={getBundled}
                         total={total}
                         setTotal={setTotal}
+                        pageName={pageName}
                     
                     />
                 </Route>
-                <Route exact path={["/pages/test/card"]}>
-                    <GiftCardOptions bundle = {bundle} id={id} setID={setID}/>
+                <Route exact path={[pageName+"/card"]}>
+                    <GiftCardOptions bundle = {bundle} id={id} setID={setID} pageName={pageName}/>
                 </Route>
             </Switch>
         </Router>
