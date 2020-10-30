@@ -17,7 +17,7 @@ function Products(props){
             },[props.bundled])
             return (
                 <div className="productOptionsContainer">
-                    <Pagination/>
+                    <Pagination pageName={props.pageName}/>
                     <h4>Step 1 of 3</h4>
                     <h1>Choose Your Items</h1>
                     <div className = "StepDescription">

@@ -24,7 +24,7 @@ function Box (props) {
         let currentTotal = props.total
         props.setBundle(temp);
         props.setTotal(currentTotal+=price)
-        history.push("/pages/test/bundleproducts")
+        history.push("/pages/"+location.href.slice(location.href.indexOf("/pages")+7)+"/bundleproducts")
 
     }
 
@@ -53,7 +53,7 @@ function Box (props) {
 
     return(
         <div className = "cardOptionsContainer">
-            <Pagination/>
+            <Pagination pageName={props.pageName}/>
             <h4>Step 1 of 3</h4>
             <h1>Choose Your Card option</h1>
             <div className = "StepDescription">

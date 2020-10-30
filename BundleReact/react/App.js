@@ -13,7 +13,10 @@ function App () {
     const [total,setTotal] = useState(0)
     const [bundled, getBundled] = useState(false)
 
-   console.log(location.href)
+    
+    
+
+    const pageName=location.href.slice(location.href.indexOf("/pages")+7)
 
     function getProducts(){
         axios.get("/admin/api/2020-10/products.json")

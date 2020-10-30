@@ -61,7 +61,7 @@ function GiftCardOptions(props) {
 
     return(
     <div className="messageContainer">
-        <Pagination/>
+        <Pagination pageName={props.pageName}/>
            <h4>Step 3 of 3</h4>
             <h1>Choose Your Message</h1>
             <div className = "StepDescription">
