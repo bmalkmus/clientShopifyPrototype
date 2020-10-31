@@ -7,8 +7,6 @@ import './style.css'
 
 function Products(props){
 
-    console.log(location.href)
-
             useEffect(()=>{
                 let selected = props.bundle
                 if(selected.length !=0){

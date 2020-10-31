@@ -5,8 +5,6 @@ import "./style.css";
 
 function Box (props) {
 
-    console.log(location.href)
-
     const history = useHistory()
 
     function buttonClick(event){

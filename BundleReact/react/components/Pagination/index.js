@@ -18,14 +18,20 @@ function Pagination(props) {
         }
     }
 
-    function ActivePage(){
-        return true
+    function ActivePage(arg){
+        let currentPage = location.href.slice(location.href.indexOf("/pages"))
+        if (currentPage===arg){
+            return true
+        }
+        else {
+            return false
+        }
     } 
     return(
         <div className="pagination">
-            <span  className = "pagActive" onClick ={pageSwitch} data-page ="1">Step 1</span>
-            <span  className={`${ActivePage ? 'pagActive' : 'pagNon'}`} onClick ={pageSwitch} data-page ="2">Step 2</span>
-            <span className="pagNon" onClick ={pageSwitch} data-page ="3">Step 3</span>
+            <span  className={`${ActivePage(props.pageName) ? 'pagActive' : 'pagNon'}`} onClick ={pageSwitch} data-page ="1">Step 1</span>
+            <span  className={`${ActivePage(props.pageName+"/bundleproducts") ? 'pagActive' : 'pagNon'}`} onClick ={pageSwitch} data-page ="2">Step 2</span>
+            <span className={`${ActivePage(props.pageName+"/card") ? 'pagActive' : 'pagNon'}`} onClick ={pageSwitch} data-page ="3">Step 3</span>
         </div>
     )
 }
