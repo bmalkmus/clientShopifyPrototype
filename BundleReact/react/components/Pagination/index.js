@@ -17,11 +17,15 @@ function Pagination(props) {
                 break;
         }
     }
+
+    function ActivePage(){
+        return true
+    } 
     return(
         <div className="pagination">
-            <span onClick ={pageSwitch} data-page ="1">Step 1</span>
-            <span onClick ={pageSwitch} data-page ="2">Step 2</span>
-            <span onClick ={pageSwitch} data-page ="3">Step 3</span>
+            <span  className = "pagActive" onClick ={pageSwitch} data-page ="1">Step 1</span>
+            <span  className={`${ActivePage ? 'pagActive' : 'pagNon'}`} onClick ={pageSwitch} data-page ="2">Step 2</span>
+            <span className="pagNon" onClick ={pageSwitch} data-page ="3">Step 3</span>
         </div>
     )
 }
