@@ -16,7 +16,7 @@ function Products(props){
             return (
                 <div className="productOptionsContainer">
                     <Pagination pageName={props.pageName}/>
-                    <h4>Step 1 of 3</h4>
+                    <h4>Step 2 of 3</h4>
                     <h1>Choose Your Items</h1>
                     <div className = "StepDescription">
                         <p> 
